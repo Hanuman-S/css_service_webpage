@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+}
+
+img{
+    display: block;
+    width:100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+body{
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.5rem;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+header,main,footer{
+    display:flex;
+}
+
+header,footer{
+    background-color: rgb(163, 77, 6);
+    color:aliceblue;
+    justify-content: center;
+}
+
+header .home{
+    position:absolute;
+    top:0;
+    left:0;
+    padding:0.5rem;
+    margin:0.25rem;
+}
+
+header .home a{
+    text-decoration: none;
+    color:white;
+    padding: 0.55rem 0.75rem 0.75rem 0.75rem;
+    margin:0.15rem;
+}
+
+header .home a:active, header .home a:focus, header .home a:hover{
+    background-color: brown;
+    border-radius: 5px;
+}
+
+main{
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+}
+
+.left,.right{
+    place-content: Center;
+}
+
+.left{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid gray;
+}
+
+form{
+    text-align: center;
+    font-size: 2rem;
+}
+
+fieldset{
+    padding: 2rem;
+    border:none
+}
+
+input{
+    font-size: 1.25rem;
+    width:26rem;
+    height:4rem;
+    margin: 0.2rem;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 0.25rem;
+    background-color: rgba(189, 218, 228, 0.274);
+}
+
+input::placeholder{
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+input[type=number] {
+    appearance: textfield;
+}
+
+select{
+    background-color: rgba(189, 218, 228, 0.274);
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    width:26rem;
+    height:4rem;
+    margin:0.2rem;
+    padding: 0.25rem;
+    font-size: 1.2rem;
+}
+
+section .row{
+    width: 26rem;
+    height:4rem;
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr 1fr;
+    gap:0.3rem;
+}
+
+section .row input{
+    width:100%;
+}
+
+.left h2,.right h2{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.right{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap:1.5rem;
+}
+
+.total h2{
+    padding-inline: 0.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.rhead, .total {
+    text-align: center;
+    padding:0.5rem;
+    width:29rem;
+}
+
+.rhead{
+    border-bottom:1px solid gray;
+}
+
+.total {
+    border-top: 1px solid gray;
+}
+
+.right img{
+    max-width: 50%;
+}
+
+figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right button{
+    background-color: rgba(0, 0, 255, 0.767);
+    color:white;
+    width:26rem;
+    height:4rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+.right button:active, .right button:focus, .right button:hover{
+    background-color: rgba(0, 0, 255, 0.884);
+}
+
+
+footer{
+    position: sticky;
+    bottom:0;
+}

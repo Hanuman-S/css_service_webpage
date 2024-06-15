@@ -15,7 +15,7 @@ img{
     display: block;
     width:100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 body{
@@ -42,25 +42,33 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(../img/dave-netto-wWYwYiCoVwI-unsplash.jpg);
-    background-size: cover;
-    background-position: top;
+    background-color: rgb(161, 35, 4);
     padding: 0.5rem;
 }
 
+header h1{
+    font-size: 7rem;
+}
+
 main{
-    background-image: url(../img/ivan-bandura-5cwigXmGWTo-unsplash.jpg);
-    background-position: top;
+    background-image: url(../img/pawel-czerwinski-nJX3ceE4zuU-unsplash.jpg);
+    background-position: center;
     background-size: cover;
     justify-content: space-evenly;
     align-items: center;
     flex-grow: 1;
     flex-direction: column;
-    gap:1rem;
-    position: relative;
 }
 
-aside{
+main h2{
+    margin:0.25rem;
+    padding:0.5rem;
+    background-color: rgba(211, 211, 211, 0.438);
+    color: rgb(207, 57, 57);
+    border-radius: 10px;
+}
+
+main aside{
     width:4rem;
     height:auto;
     margin:0.25rem;
@@ -70,7 +78,7 @@ aside{
     top:5px;
     left:5px;
 }
-aside a{
+main aside a{
     padding:1rem 0;
     text-align: center;
     display: block;
@@ -89,22 +97,10 @@ aside a:hover, aside a:active{
     color:rgb(207, 57, 57);
 }
 
-
-h1{
-    font-size: 7rem;
-    display: block;
-}
-
-main h2{
-    margin:0.25rem;
-    padding:0.5rem;
-    background-color: rgba(211, 211, 211, 0.438);
-    color: rgb(207, 57, 57);
-    border-radius: 10px;
-}
-
 p{
     text-align: center;
+    color:rgb(44, 44, 44);
+    padding-bottom: 0.5rem;
 }
 
 :is(header:hover, header:focus-within) .button_icon{
@@ -253,25 +249,9 @@ nav{
     border-radius: 0 0 8px 8px;
 }
 
-.content2 a{
-    display: block;
-    padding:0.5rem;
-    margin:0.25rem;
-    margin-top: 0.35rem;
-    text-decoration: none;
-    background-color: rgba(86, 250, 36, 0.726);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 3px;
-    color:darkgreen;
-}
 
-.content2 a:hover,.content2 a:focus,.content2 a:active{
-    background-color: rgba(0, 128, 0, 0.678);
-}
-
-
-.about, .services, .contact{
-    width:75%;
+.Products-1,.Products-2,.Products-3{
+    width:65%;
     padding: 0.25rem;
     margin:0.5rem;
     background-color: rgba(255, 228, 196, 0.534);
@@ -279,28 +259,53 @@ nav{
     border-radius: 10px;
 }
 
-.content1, .content2, .content3{
-    padding:0.5rem;
-    margin:0.25rem;
-    background-color: rgba(211, 211, 211, 0.322);
-    border-radius: 10px;
-    color:rgb(44, 44, 44);
+.Products-1{
+    margin-top:1rem;
 }
 
-.content2{
+:is(.Products-1,.Products-2,.Products-3) h2{
+    color: rgb(165, 42, 42);
+    padding:0.25rem;
+    padding-left: 1.1rem;
+}
+
+.product-1-page,.product-2-page,.product-3-page{
+    margin:0.25rem;
+    padding:0.5rem;
+    background-color: rgba(211, 211, 211, 0.438);
+    color: rgb(207, 57, 57);
+    border-radius: 10px;
+}
+
+.img-row-1,.img-row-2,.img-row-3,.img-row-4,.img-row-5,.img-row-6{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap:1em;
+    margin:0.25rem;
 }
 
-.content3{
-    display:flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+.img-row-1,.img-row-3,.img-row-5{
+    border-bottom: 3px solid rgba(211, 211, 211, 0.322);
+    margin-bottom: 1rem;
 }
 
-.content3 a{
+:is(.Products-1,.Products-2,.Products-3) a{
+    display: block;
+    padding:0.5rem;
+    margin:0.25rem;
+    margin-top: 0.35rem;
     text-decoration: none;
+    background-color: rgba(86, 250, 36, 0.726);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    color:darkgreen;
+    text-align: center;
+}
+
+:is(.Products-1,.Products-2,.Products-3) a:hover, :is(.Products-1,.Products-2,.Products-3) a:focus, :is(.Products-1,.Products-2,.Products-3) a:active{
+    background-color: rgba(0, 128, 0, 0.678);
 }
 
 figure{
@@ -311,6 +316,10 @@ figure{
 }
 
 footer{
-    position:sticky;
-    bottom:0;
+    position: sticky;
+    bottom: 0;
+}
+
+footer p{
+    padding-bottom: 0;
 }

@@ -4,17 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/settings.css">
-    <title>Products</title>
+    <title>Settings</title>
 </head>
 <body>
     <header>
-        <h1>Header</h1>
+        <section class="account-img">
+            <figure>
+                <img src="img/profile-pic.jpg" alt="Profile Picture" height="360" width="360">
+            </figure>
+        </section>
+        <section class="header-title">
+            <h1 class="header-title">Hello, <span class="nowrap">Account-Name</span></h1>
+        </section>
     </header>
     <main>
-        <p>Main</p>
+        <section class="toolbar">
+            <div class="orders">
+                <a href="">🛒 <br> Orders</a>
+            </div>
+            <div class="edit">
+                <a href="">👤 <br> Edit Account</a>
+            </div>
+            <div class="member">
+                <a href="">⭐ <br> Membership</a>
+            </div>
+            <div class="logout">
+                <a href="">↪ <br> Logout</a>
+            </div>
+        </section>
+        <section class="orders-table">
+            <table>
+                <tr>
+                    <th>
+                        Order
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Total
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        #xxx
+                    </td>
+                    <td>
+                        <time>Month Day, Year</time>
+                    </td>
+                    <td>
+                        Shipping/Out for Delivery/Delivered
+                    </td>
+                    <td>
+                        $
+                    </td>
+                    <td>
+                        <a href="" class="action">Action</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        #xxx
+                    </td>
+                    <td>
+                        <time>Month Day, Year</time>
+                    </td>
+                    <td>
+                        Shipping/Out for Delivery/Delivered
+                    </td>
+                    <td>
+                        $
+                    </td>
+                    <td>
+                        <a href="" class="action">Action</a>
+                    </td>
+                </tr>
+            </table>
+        </section>
     </main>
     <footer>
-        <p>Footer</p>
+        <p>&copy;CompanyName.Co</p>
     </footer>
 </body>
 </html>

@@ -32,7 +32,6 @@ header,main,footer{
 }
 
 header,footer{
-    background-color: rgb(6, 88, 143);
     color:aliceblue;
     justify-content: center;
 }
@@ -123,7 +122,7 @@ nav{
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    animation: showmenu_r 0.15s linear forwards;
+    animation: showmenu_r 0.1s linear forwards;
 }
 
 
@@ -316,6 +315,7 @@ figure{
 }
 
 footer{
+    background-color: rgb(6, 88, 143);
     position: sticky;
     bottom: 0;
 }

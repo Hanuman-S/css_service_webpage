@@ -25,7 +25,16 @@ body{
 
     display: grid;
     grid-template-rows: repeat(9,auto) 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     
+}
+
+.container{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    grid-column: 1/6;
+    grid-row: 1/11;
 }
 
 header,main,footer{
@@ -42,6 +51,7 @@ header{
     flex-flow: row nowrap;
     justify-content: center;
     align-items: flex-start;
+    grid-column: 1/6;
     grid-row: 1/4;
     background-image: url(../img/daniel-leone-g30P1zcOzXo-unsplash.jpg);
     background-color: rgb(18, 150, 226);
@@ -63,8 +73,8 @@ header figure img{
     width:100%;
     height:auto;
     border-radius: 50%;
-    padding:1rem;
-    margin:1rem;
+    padding:0.5rem 1rem;
+    margin:1rem 1rem 6rem;
 }
 
 .nowrap{
@@ -73,6 +83,8 @@ header figure img{
 
 
 main{
+    flex-grow: 1;
+    grid-column: 1/6;
     grid-row:4/10;
     background-color: beige;
     background-position: center;
@@ -82,18 +94,164 @@ main{
     flex-direction: column;
 }
 
-main h2{
-    font-size: 2.5rem;
-    margin:0.25rem;
-    padding:1rem 0.5rem;
-    background-color: rgba(211, 211, 211, 0.438);
-    color: rgb(207, 57, 57);
-    border-radius: 10px;
+.nav{
+    width:20vw;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.button{
+    background-color: midnightblue;
+    border:none;
+    width:48px;
+    height:48px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    transition: all 0.3s;
+}
+
+.back-button{
+    position: absolute;
+    top:0;
+    left:-17vw;
+    display: block;
+    width: 20vw;
+    height:48px;
+    background-color: midnightblue;
+    transition: all 0.27s;
+}
+
+.button_icon,.button_icon::after,.button_icon::before{
+    background-color: aliceblue;
+    width:2.5rem;
+    height:0.25rem;
+    border-radius: 0.5rem;
+    position:absolute;
+    transition: all 0.3s;
+}
+
+.button_icon::after,.button_icon::before{
+    content: '';
+}
+
+.button_icon::before{
+    transform: translate(-20px,-12px);
+}
+
+.button_icon::after{
+    transform: translate(-20px,12px);
+}
+
+:is(.nav:hover,.nav:focus-within) .button{
+    transform:translateX(8vw);
+}
+:is(.nav:hover, .nav:focus-within) .button_icon{
+    background-color: transparent;
+}
+:is(.nav:hover, .nav:focus-within) .button_icon::before{
+    transform: translateX(-20px) rotate(45deg);
+}
+:is(.nav:hover, .nav:focus-within) .button_icon::after{
+    transform: translateX(-20px) rotate(-45deg);
+}
+:is(.nav:hover, .nav:focus-within) .back-button{
+    transform: translateX(17vw);
+}
+:is(.nav:hover, .nav:focus-within) nav{
+    display: flex;
+    flex-flow: column nowrap;
+    animation: showmenu 0.2s linear forwards;
+    transform-origin: left ;
+}
+
+@keyframes showmenu {
+    0%{
+        transform: scaleX(0);
+    }
+    50%{
+        transform: scaleX(0.5);
+    }
+    100%{
+        transform: scaleX(1); 
+    }
+}
+
+/* :is(.nav:hover, .nav:focus-within) .back-button{
+    animation: button-background 0.4s linear forwards;
+    transform-origin: left;
+}
+@keyframes button-background {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: scaleX();
+    }
+}
+ */
+.orders{
+    position: relative;
+    z-index: 1;
+}
+
+nav{
+    display:none;
+    flex-flow: column nowrap;
+    position: relative;
+    z-index: 2;
+    height:35.4rem;
+    background-color: midnightblue;
+}
+
+.account-list,.product-list,.home-list{
+    border-bottom:1px solid rgb(17, 17, 70);
+}
+
+:is(.account-list,.product-list,.home-list) a{
+    padding:0.425rem;
+    text-align: center;
+}
+
+nav a{
+    width: 100%;
+    height:100%;
+    display: block;
+    background-color:transparent;
+    text-decoration: none;
+    color:whitesmoke;
+}
+
+nav a:hover, nav a:active, nav a:focus{
+    background-color: rgba(20, 20, 88, 0.884);
+}
+
+:is(.home,.products,.account) h2 a:hover, :is(.home,.products,.account) h2 a:active, :is(.home,.products,.account) h2 a:focus{
+    background-color: rgba(20, 20, 88, 0.884);
+}
+
+.home{
+    border-top:1px solid rgb(17, 17, 70);
+}
+
+.home h2,.products h2,.account h2{
+    text-align: center;
+    display: block;
+    background-color: transparent;
+    font-size:2.5rem;
+    width: 100%;
+}
+
+.home h2 a,.products h2 a,.account h2 a{
+    padding:0.37rem 0;
+    background-color: rgba(25, 25, 99, 0.651);
 }
 
 .toolbar{
     position:relative;
-    top:-10vh;
+    top:-13vh;
     display: flex;
     flex-flow: row wrap;
     text-align: center;
@@ -131,7 +289,7 @@ main h2{
 table{
     border: 2px solid gray;
     padding: 0.5rem;
-    margin: 0.25rem;
+    margin: 0.25rem 0.25rem 1rem;;
     border-collapse: collapse;
 }
 
@@ -164,6 +322,7 @@ td{
 
 footer{
     justify-content: center;
+    grid-column: 1/6;
     grid-row: 10/11;
     background-color: rgb(6, 88, 143);
     position: sticky;

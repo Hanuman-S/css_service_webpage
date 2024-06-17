@@ -249,7 +249,9 @@ nav{
     border-radius: 8px 8px 0 0;
 }
 
-.home-list:last-child a:hover,.home-list:last-child a:focus,.home-list:last-child a:active,.product-list:last-child a:hover,.product-list:last-child a:focus,.product-list:last-child a:active,.account-list:last-child a:hover,.account-list:last-child a:focus,.account-list:last-child a:active{
+.last-home a:hover,.last-home a:active,.last-home a:focus,
+.last-product a:hover,.last-product a:active,.last-product a:focus,
+.last-account a:hover,.last-account a:active,.last-account a:focus{
     border-radius: 0 0 8px 8px;
 }
 

@@ -86,7 +86,8 @@ main{
     flex-grow: 1;
     grid-column: 1/6;
     grid-row:4/10;
-    background-color: beige;
+    background-image: url(../img/adrien-olichon-_GH9LwhlSO4-unsplash.jpg);
+    background-color: black;
     background-position: center;
     background-size: cover;
     justify-content: space-evenly;
@@ -179,22 +180,9 @@ main{
     }
 }
 
-/* :is(.nav:hover, .nav:focus-within) .back-button{
-    animation: button-background 0.4s linear forwards;
-    transform-origin: left;
-}
-@keyframes button-background {
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: scaleX();
-    }
-}
- */
 .orders{
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 nav{
@@ -266,7 +254,7 @@ nav a:hover, nav a:active, nav a:focus{
     align-items: center;
     width:17rem;
     height:10rem;
-    background-color: aliceblue;
+    background-color: rgb(205, 208, 212);
     border-radius: 5px;
     border:2px solid white;
 }
@@ -283,7 +271,15 @@ nav a:hover, nav a:active, nav a:focus{
 }
 
 .toolbar div a:hover, .toolbar div a:active, .toolbar div a:focus{
-    background-color: rgba(205, 208, 212, 0.61);
+    background-color: rgba(190, 193, 197, 0.74);
+}
+
+.tables{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap:5rem;
 }
 
 table{
@@ -291,17 +287,19 @@ table{
     padding: 0.5rem;
     margin: 0.25rem 0.25rem 1rem;;
     border-collapse: collapse;
+    color:white;
 }
 
 th{
-    background-color:rgba(148, 148, 148, 0.644);
+    background-color:rgba(212, 212, 212, 0.644);
     font-weight: bold;
     padding:0.5rem;
     margin: 0.25rem;
+    color: rgb(255, 238, 238);
 }
 
 th:nth-child(even){
-    background-color: rgba(152, 152, 152, 0.575);
+    background-color: rgba(202, 202, 202, 0.575);
 }
 
 td{
@@ -314,10 +312,203 @@ td{
 .action{
     font-size: 1.2rem;
     text-decoration: none;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     padding:0.3rem 0.7rem;
     border-radius: 16.3px;
+}
+
+.edit-account form{
+    height:35vh;
+}
+
+fieldset{
+    border:none;
+}
+
+.grid-form{
+    display: grid;
+    grid-template-columns: 31.8vw 31.8vw 10vw;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.first-name{
+    grid-area:1/1/1/2
+}
+
+.last-name{
+    grid-area: 1/2/1/3;
+}
+
+.address{
+    grid-area: 2/1/2/3;
+}
+
+.city{
+    grid-area: 3/1/3/2;
+}
+
+.state{
+    grid-area: 3/2/3/3;
+}
+
+.mail{
+    grid-area: 4/1/4/2;
+}
+
+.password{
+    grid-area: 4/2/4/3;
+}
+
+.save-cancel{
+    display: flex;
+    flex-flow:column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-area: 1/3/5/4;
+}
+
+.first-name,.last-name,.address,.mail,.password,.state,.city{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 8.75vh;
+}
+
+.address input{
+    width:51.8vw;
+}
+
+label{
+    color: aliceblue;
+    font-size: 1.4rem;
+    padding:0.25rem;
+    margin:0.5rem;
+    font-weight: 350;
+}
+
+input{
+    font-size:1.2rem;
+    width:20vw;;
+    height:auto;
+    margin: 0.2rem;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 0.25rem;
+    background-color: rgba(189, 218, 228, 0.274);
+    color:whitesmoke
+}
+
+.edit-header{
+    padding-left: 20rem;
+    color:rgb(255, 238, 238);
+}
+
+.form h2{
+    color:rgb(255, 238, 238);
+    margin-bottom:1rem;
+}
+
+.save-cancel button[type=submit]{
+    background-color:orangered;
+    color:aliceblue;
+    border:1px solid orangered;
+    font-size: 1.25rem;
+    width:8vw;
+    padding:0.5rem;
+    margin:0.25rem;
+    border-radius: 5px;
+}
+
+.save-cancel button[type=reset]{
+    background-color:transparent;
+    color:orangered;
+    border:1px solid orangered;
+    font-size: 1.25rem;
+    width:8vw;
+    padding:0.5rem;
+    margin:0.25rem;
+    border-radius: 5px;
+}
+
+:is(.save-cancel button[type=submit]):hover,:is(.save-cancel button[type=submit]):active,:is(.save-cancel button[type=submit]):focus{
+    background-color: rgba(219, 60, 3, 0.747);
+}
+
+:is(.save-cancel button[type=reset]):hover,:is(.save-cancel button[type=reset]):active,:is(.save-cancel button[type=reset]):focus{
+    background-color: rgba(209, 207, 207, 0.747);
+}
+
+.edit-pfp img{
+    width:13vw;
+    height:auto;
+    border-radius: 50%;
+    margin:0.5rem;
+    border:1px solid gray;
+}
+
+.edit-pfp figure{
+padding-top: 2rem;
+}
+
+.edit-pfp figcaption{
+    text-align: center;
+}
+
+.edit-pfp figcaption button{
+    background-color:lightslategray;
+    color:aliceblue;
+    border:1px solid lightslategray;
+    font-size: 1rem;
+    width:8vw;
+    padding:0.5rem;
+    margin:0.25rem;
+    border-radius: 5px;
+}
+
+.edit-pfp figcaption button:hover,.edit-pfp figcaption button:active,.edit-pfp figcaption button:focus{
+    background-color: rgba(87, 103, 119, 0.842);
+}
+
+.options{
+    text-align: center;
+}
+
+.membership select{
+    font-size:1.5rem;
+    width:20vw;;
+    height:auto;
+    margin: 0.2rem;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 0.25rem;
+    background-color: rgba(189, 218, 228, 0.274);
+    color:whitesmoke;
+}
+
+.membership option{
+    color:black;
+}
+
+.edit-account,.membership{
+    border:1.5px solid gray;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.116);
+}
+
+.edit-account{
+    display: flex; /* flex */
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding:2rem 3rem 3rem 3rem;
+}
+
+.membership{
+    display: grid; /* grid */
+    padding:3rem;
+    margin:0.5rem;
 }
 
 footer{
